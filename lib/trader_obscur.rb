@@ -14,8 +14,20 @@ def crazy_scraper
     value << price.content
     end
 
-  puts array = key.zip(value).to_h
-
+  array = key.zip(value).map{|k, v| {key:k, value:v}}
+  puts array[1]
 end
 
 crazy_scraper
+def crazy_scraper
+    key = {}
+    value = {}
+  @page.xpath('//td[2]/a').each do |name|
+    key << name.content
+    end
+  @page.xpath('//a[@class="price"]/@data-usd').each do |price|
+    value << price.content
+    end
+
+  return array = key.zip(value).to_a
+end

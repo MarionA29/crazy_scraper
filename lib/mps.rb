@@ -21,5 +21,3 @@ return hash_mps_email = array_of_mps.zip(array_of_emails).to_h
 end
 
 get_mps_url
-
-#//*[@id="DataTables_Table_0"]/tbody/tr[1]/td[1]/a
